@@ -24,7 +24,7 @@ RSpec.describe Customer, type: :model do
     expect(subject.phone.length).to eq(10)
   end
   it "is not valid if the phone number is not all digits" do
-    expect(subject.phone.length).to_not eq(true)
+    expect(subject.phone.length).to_not eq(123-456-7890)
   end
   it "is not valid if the email address doesn't have a @" do
     expect(subject.email).to_not eq("@")
