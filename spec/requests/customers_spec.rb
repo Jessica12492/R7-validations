@@ -92,8 +92,9 @@ end
       it "deletes a customer record" do
       customer = FactoryBot.create(:customer)
       get customer_path(id: customer.id )
+      
       customer.delete
-      redirect_to customer_path
+      redirect_to action:"destroy", id:1
       expect(response).to render_template(:show)
      
   end
