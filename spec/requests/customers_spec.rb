@@ -71,31 +71,26 @@ end
     it "updates an entry and redirects to the show path for the customer" do
     customer = FactoryBot.create(:customer)
     put customer_path(customer.id), params: {customer: {email:"amy@gmail.com"}}
-    customer_attributes ={email: "amy@gmail.com"}
-    customer.update({email: "amy@gmail.com"})
-   expect(customer.email).to eq("amy@gmail.com")
-   expect(response).to redirect_to(customer)
+    customer.reload
+    expect(customer.email).to eq("amy@gmail.com")
+    expect(response).to redirect_to(customer)
   end
 end
   describe "put customer_path with invalid data" do
     it "does not update the customer record or redirect" do 
       customer = FactoryBot.create(:customer)
-      put customer_path(customer.id), params: {customer: {email: "amy@" }}
+      put customer_path(customer.id), params: { customer: { email: "am@" } }
       customer.reload
-      expect(customer.email).not_to eq("amy@")
-      redirect_to customer
-      
-    end 
+      expect(customer.email).not_to eq("am@")
+      expect(response).to redirect_to(customer)
+  end
   end
 
     describe "delete a customer record" do
       it "deletes a customer record" do
       customer = FactoryBot.create(:customer)
-      get customer_path(id: customer.id )
-      
-      customer.delete
-      redirect_to action:"destroy", id:1
-      expect(response).to render_template(:show)
-     
+      expect { delete customer_path(id: customer.id) }.to change(Customer, :count).by(-1)
+      expect(response).to redirect_to(customers_path)
+ 
   end
   end

@@ -21,13 +21,18 @@ RSpec.describe Customer, type: :model do
     expect(subject).to_not be_valid
   end
   it "is not valid if the phone number is not 10 chars" do
-    expect(subject.phone.length).to eq(10)
+    subject.phone = "123"
+    expect(subject).to_not be_valid
+   
   end
   it "is not valid if the phone number is not all digits" do
-    expect(subject.phone.length).to_not eq(123-456-7890)
+    subject.phone = "123-456-789"
+    expect(subject).to_not be_valid
+  
   end
   it "is not valid if the email address doesn't have a @" do
-    expect(subject.email).to_not eq("@")
+    subject.email = "amy1234gmail.com"
+    expect(subject).to_not be_valid
   end
   it "returns the correct full_name" do
     expect(subject.full_name).to eq("Jack Smith")
