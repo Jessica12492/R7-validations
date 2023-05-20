@@ -26,7 +26,7 @@ RSpec.describe Customer, type: :model do
    
   end
   it "is not valid if the phone number is not all digits" do
-    subject.phone = "123-456-789"
+    subject.phone = "123-456-78"
     expect(subject).to_not be_valid
   
   end
