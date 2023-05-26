@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
- # rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
+ rescue_from ActiveRecord::RecordNotFound, with: :catch_not_found
   before_action :set_order, only: %i[ show edit update destroy ]
   
   def index
@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+   
     
   end
 
@@ -18,8 +18,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-   @order=Order.find(params[:id])
-   #render :edit
+ 
     end
   
 
@@ -32,7 +31,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+        format.html { redirect_to @order, notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }

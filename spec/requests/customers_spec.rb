@@ -82,7 +82,7 @@ end
       put customer_path(customer.id), params: { customer: { email: "am@" } }
       customer.reload
       expect(customer.email).not_to eq("am@")
-      expect(response).to redirect_to(customer)
+      expect(response).to render_template(:edit) 
   end
   end
 

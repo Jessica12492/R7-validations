@@ -44,7 +44,7 @@ end
 describe "put order_path with valid data" do
   it "updates an entry and redirects to the show path for the customer" do
     order = FactoryBot.create(:order)
-    put "/orders/#{order.id}", params: {order: {product_name: 'orange'}}
+    put order_path(id: order.id), params: {order: {product_name: 'orange'}}
     order.reload
     expect(order.product_name).to eq('orange')
     expect(response).to redirect_to("/orders/#{order.id}")
@@ -53,9 +53,9 @@ end
 describe "put order_path with invalid data" do
   it "does not update the customer record or redirect" do
     order = FactoryBot.create(:order)
-    put "/orders/#{order.id}", params: {order: {product_count: 20}}
+    put order_path(id: order.id), params: {order: {product_count: 20}}
     order.reload
-    expect(order.customer_id).not_to eq(20)
+    expect(order.product_name).not_to eq(20)
     expect(response).to redirect_to("/orders/#{order.id}")
   end
 end
