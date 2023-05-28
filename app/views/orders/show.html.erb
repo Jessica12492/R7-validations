@@ -2,9 +2,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render  @order %>
+
 <br>
 <div>
- 
+
    <%= link_to "Show to orders", orders_path %>
    <%= link_to "Edit to orders", orders_path %>
    <%= button_to "Destroy this order", @order, method: :delete %>

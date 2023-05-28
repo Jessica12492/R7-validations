@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #get "orders/destroy", to: "order#destroy"
 
   root to: "orders#index"
- 
+  
 
   resources :orders
 

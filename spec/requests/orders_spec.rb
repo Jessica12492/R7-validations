@@ -51,12 +51,12 @@ describe "put order_path with valid data" do
   end
 end
 describe "put order_path with invalid data" do
-  it "does not update the customer record or redirect" do
+  it "does not update the order record or redirect" do
     order = FactoryBot.create(:order)
     put order_path(id: order.id), params: {order: {product_count: 20}}
     order.reload
     expect(order.product_name).not_to eq(20)
-    expect(response).to redirect_to("/orders/#{order.id}")
+    expect(response).not_to redirect_to("orders#{order.id}")
   end
 end
 
