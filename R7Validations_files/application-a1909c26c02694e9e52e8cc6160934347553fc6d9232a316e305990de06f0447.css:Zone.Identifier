@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=http://[::1]:3000/customers/2
+HostUrl=http://[::1]:3000/assets/application-a1909c26c02694e9e52e8cc6160934347553fc6d9232a316e305990de06f0447.css

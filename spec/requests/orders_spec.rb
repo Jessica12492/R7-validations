@@ -53,10 +53,10 @@ end
 describe "put order_path with invalid data" do
   it "does not update the order record or redirect" do
     order = FactoryBot.create(:order)
-    put order_path(id: order.id), params: {order: {product_count: 20}}
+    put order_path(id: order.id), params: {order: {product_count: "a"}}
     order.reload
-    expect(order.product_count).not_to eq(20)
-    expect(response).not_to redirect_to("orders#{order.id}")
+    expect(order.product_count).not_to eq("a")
+    expect(response).to redirect_to(order)
   end
 end
 

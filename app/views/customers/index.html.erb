@@ -3,7 +3,8 @@
 <h1>Customers</h1>
 
 <div id="customers">
-  <% @customers.each do |customer| %>
+ 
+ <% @customers.each do |customer| %>
     <%= render customer %>
     <p>
       <%= link_to "Show this customer", customer %>
@@ -12,3 +13,5 @@
 </div>
 
 <%= link_to "New customer", new_customer_path %>
+
+
