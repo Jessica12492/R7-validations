@@ -9,8 +9,8 @@ class CustomersController < ApplicationController
 
   # GET /customers/1 or /customers/1.json
   def show
-  end
 
+  end
   # GET /customers/new
   def new
     @customer = Customer.new
@@ -18,6 +18,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   # POST /customers or /customers.json
