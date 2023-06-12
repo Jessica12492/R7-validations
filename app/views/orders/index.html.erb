@@ -1,4 +1,4 @@
-<h1>Orders#index</h1>
+<h1>Orders#Index</h1>
 <p style="color: green"><%= notice %></p>
 
 <h1>Orders</h1>
@@ -9,12 +9,12 @@
   <% @orders.each do |order| %>
   <%= render order %>
     <p>
-     <%= link_to "Show this order", order %>
+     <%= link_to "Show this order", order  %>
     </p>
   <% end %>
 </div>
 </div>
-
-<%= link_to "New order", new_order_path %>
-
+<div class="btn btn-light" >
+<%= link_to "New order", new_order_path  %>
+</div>
 

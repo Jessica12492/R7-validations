@@ -82,4 +82,6 @@ group :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'rexml'
+  gem "font-awesome-sass", "~> 6.1" 
+  gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 end
