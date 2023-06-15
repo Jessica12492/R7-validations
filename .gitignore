@@ -30,3 +30,5 @@
 !/tmp/storage/.keep
 
 /public/assets
+/node_modules
+/app/assets/builds
