@@ -1,8 +1,17 @@
 <p style="color: green"><%= notice %></p>
+<!--card class-->
+<div class="card">
+<div class="card shadow p-3 mb-5 bg-white rounded">
+<div class="card-body">
+<div class="p-3 mb-2 bg-info text-white">Customer Information
+</div>   
+</div>
+</div>
+</div>
 
 <%= render @customer %>
 
-<table>
+<table class="table">
   <thead>
   <tr>
   
@@ -15,7 +24,7 @@
   <tbody>
     <%  @customer.orders.each do |order| %>
       <tr>
-     
+    
         <td><%= order.product_name %></td>
         <td><%= order.product_count %></td>
         <td><%= link_to 'Show', @order %></td>
@@ -28,3 +37,7 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+ 

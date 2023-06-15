@@ -8,3 +8,18 @@ $fa-font-path: "./webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 
+
+@font-face {
+    font-family: "Cream Cake";
+    src: url('/assets/Cream_Cake');
+ }
+ h1 {
+    font-family: "Cream Cake";
+  }
+
+  .banner-background  {
+    background: url('assets/pexels-steve-johnson-1985664.jpg');
+    background-size: cover;
+  height:390px;
+  }
+ 
